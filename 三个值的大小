@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main()
+{
+    int yuhan(int x,int y,int z);//函数声明
+    int a,b,c,w;//定义四个整型变量
+    printf("请输入三个整形数值:\n");//输出显示
+    scanf("%d %d %d",&a,&b,&c);//输入三个整形数值
+    w=yuhan(a,b,c);//调用函数
+
+    printf("最大值为：%d\n",w);//输出最大值
+
+    return 0;//返回整形0
+}
+int yuhan(int x,int y,int z)//定义yuhan函数,函数值为整型，形式参数x,y,z为整型
+{
+    int h;//定义整型变量h
+    if(x<y)//如果条件成立则进入下面if
+    {
+        if(z>y)h=z;//同时满足x<y和z>y时则将z值赋给h
+        else h=y;//反之则将y值赋给h
+    }
+    else//当x<y不成立则进入下面if
+    {
+        if(z>x)h=z;//同时满足x>y和z>x时则将z值赋给h
+        else h=x;//反之则将x值赋给h
+    }
+
+    return h;//把h返回给main函数
+}
